@@ -15,12 +15,6 @@ export default function defineUserModel(mongoose: Mongoose) {
 					type: String,
 					default: "",
 				},
-				email: {
-					type: String,
-					unique: true,
-					lowercase: true,
-					trim: true,
-				},
 				name: {
 					type: String,
 					required: true,
@@ -30,8 +24,20 @@ export default function defineUserModel(mongoose: Mongoose) {
 					required: true,
 					trim: true,
 				},
-				token: String,
-				expires: Date,
+				username: {
+					type: String,
+                    unique: true,
+				},
+				// Contact
+				phoneNumber: {
+					type: String,
+				},
+				email: {
+					type: String,
+					unique: true,
+					lowercase: true,
+					trim: true,
+				},
 			},
 			{
 				timestamps: true,
