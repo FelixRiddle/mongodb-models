@@ -1,4 +1,4 @@
 # TODO
 
 - [x] OAuth models
-- [ ] User model
+- [x] User model
