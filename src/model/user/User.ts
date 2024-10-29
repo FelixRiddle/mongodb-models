@@ -1,4 +1,4 @@
-import { Models } from "mongodb_models";
+import Models from "mongodb_models";
 import { Model } from "mongoose";
 import bcrypt from "bcrypt";
 
