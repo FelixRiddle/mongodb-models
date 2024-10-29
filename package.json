@@ -8,7 +8,7 @@
 		"dist"
 	],
 	"scripts": {
-		"start": "tsx ./src/index.ts",
+		"start": "tsx ./src/cli/index.ts",
 		"test": "NODE_ENV=testing jest",
 		"build": "tsup"
 	},
@@ -18,11 +18,13 @@
 	"description": "",
 	"devDependencies": {
 		"@types/node": "^22.8.2",
+		"@types/yargs": "^17.0.33",
 		"ts-node": "^10.9.2",
 		"tsc": "^2.0.4",
 		"tsup": "^8.3.5",
 		"tsx": "^4.19.2",
-		"typescript": "^5.6.3"
+		"typescript": "^5.6.3",
+		"yargs": "^17.7.2"
 	},
 	"dependencies": {
 		"mongoose": "^8.7.3"
