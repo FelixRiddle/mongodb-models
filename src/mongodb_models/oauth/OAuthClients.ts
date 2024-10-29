@@ -29,7 +29,6 @@ export default function defineOAuthClients(mongoose: Mongoose) {
 				required: true,
 				enum: ["authorization_code", "refresh_token"],
 			},
-		}),
-		"oauth-clients"
+		})
 	);
 }

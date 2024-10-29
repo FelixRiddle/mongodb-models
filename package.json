@@ -17,6 +17,8 @@
 	"license": "ISC",
 	"description": "",
 	"devDependencies": {
+		"@types/bcrypt": "^5.0.2",
+		"@types/mongoose": "^5.11.96",
 		"@types/node": "^22.8.2",
 		"@types/yargs": "^17.0.33",
 		"ts-node": "^10.9.2",
@@ -27,6 +29,7 @@
 		"yargs": "^17.7.2"
 	},
 	"dependencies": {
+		"bcrypt": "^5.1.1",
 		"mongoose": "^8.7.3"
 	}
 }

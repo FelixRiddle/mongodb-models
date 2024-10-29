@@ -1,15 +1,18 @@
 import { Mongoose, Schema } from "mongoose";
 
-export const OAuthAccessTokens = new Schema({
+export const OAuthAuthorizationCodes = new Schema({
 	_id: {
 		type: String,
 		auto: true,
 	},
-	accessToken: {
+	authorizationCode: {
 		type: String,
 	},
-	accessTokenExpiresAt: {
+	expiresAt: {
 		type: Date,
+	},
+	redirectUri: {
+		type: String,
 	},
 	scope: {
 		type: String,
@@ -19,16 +22,15 @@ export const OAuthAccessTokens = new Schema({
 	},
 	userId: {
 		type: String,
-	}
+	},
 });
 
 /**
  * Define OAuth2 clients
  */
-export default function defineOAuthAccessTokens(mongoose: Mongoose) {
+export default function defineOAuthAuthorizationCodes(mongoose: Mongoose) {
 	return mongoose.model(
-		"OAuthAccessTokens",
-		OAuthAccessTokens,
-		"oauth-access-tokens"
+		"OAuthAuthorizationCodes",
+		OAuthAuthorizationCodes
 	);
 }

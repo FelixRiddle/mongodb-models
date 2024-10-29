@@ -27,7 +27,6 @@ export default function defineOAuthRefreshTokens(mongoose: Mongoose) {
 			userId: {
 				type: String,
 			},
-		}),
-		"oauth-refresh-tokens"
+		})
 	);
 }

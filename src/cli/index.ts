@@ -1,9 +1,13 @@
 import yargs from "yargs";
 
+import { Models } from "@/mongodb_models";
+
 /**
  * Run commands
  */
 async function cli() {
+	const models = new Models();
+	
 	const argv = yargs(process.argv.slice(2))
 		.usage("Usage: $0 <command> [options]")
 		.command(
