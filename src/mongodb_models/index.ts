@@ -1,15 +1,16 @@
-import mongoose, { Model } from "mongoose";
+import mongoose, { Mongoose } from "mongoose";
 
 import defineOAuthClients from "./oauth/OAuthClients";
 import defineOAuthAccessTokens from "./oauth/OAuthAccessTokens";
 import defineOAuthAuthorizationCodes from "./oauth/OAuthAuthorizationTokens";
 import defineOAuthRefreshTokens from "./oauth/OAuthRefreshTokens";
 import defineUserModel from "./user/User";
+import databaseName, { mongodbUri } from "@/env";
 
 /**
  * Models
  */
-export class Models {
+export default class Models {
 	// User
 	User;
 	
@@ -22,7 +23,7 @@ export class Models {
 	/**
 	 * Constructor
 	 */
-	constructor() {
+	constructor(mongoose: Mongoose) {
 		// User
 		this.User = defineUserModel(mongoose);
 		
@@ -31,5 +32,13 @@ export class Models {
 		this.OAuthAuthorizationCodes = defineOAuthAuthorizationCodes(mongoose);
 		this.OAuthAccessTokens = defineOAuthAccessTokens(mongoose);
 		this.OAuthRefreshTokens = defineOAuthRefreshTokens(mongoose);
+	}
+	
+	/**
+	 * Instantitate this class with a connection
+	 */
+	static async create() {
+		await mongoose.connect(mongodbUri());
+		return new Models(mongoose);
 	}
 }
