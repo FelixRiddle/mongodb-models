@@ -1,0 +1,26 @@
+{
+	"name": "mongodb-models",
+	"version": "1.0.0",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"test": "NODE_ENV=testing jest",
+		"build": "tsup"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"@types/node": "^22.8.2",
+		"ts-node": "^10.9.2",
+		"tsc": "^2.0.4",
+		"tsup": "^8.3.5",
+		"tsx": "^4.19.2",
+		"typescript": "^5.6.3"
+	}
+}
